@@ -6,4 +6,7 @@
     <color name="colorUserBackground">#FF5722</color>
     <color name="colorActivityBackground">#FF5252</color>
     <color name="colorText">#fff</color>
+    <color name="loginTexts">#ed1447</color>
+    <color name="loginActivityBackground">#a9b0c3</color>
+    <color name="registerText">#ed1447</color>
 </resources>
