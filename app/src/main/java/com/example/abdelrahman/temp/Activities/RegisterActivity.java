@@ -37,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView,
 
     CityPresenter cityPresenter;
     Spinner citySpinner;
-    HashMap<Integer,String> spinnerMap;
+    HashMap<Integer,String> spinnerMap = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,15 +57,8 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView,
         gender_rg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int selectedId = gender_rg.getCheckedRadioButtonId();
-                switch (selectedId){
-                    case R.id.male :
-                        gender = "0";
-                        break;
-                    case R.id.female:
-                        gender = "1";
-                        break;
-                }
+                if(male.isChecked()) gender = "0";
+                if (female.isChecked()) gender = "1";
             }
         });
 
@@ -128,6 +121,6 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView,
 
     @Override
     public void showErrorMessage() {
-        Toast.makeText(this,"Error Eccuored",Toast.LENGTH_LONG).show();
+        Toast.makeText(this,"R Error Eccuored",Toast.LENGTH_LONG).show();
     }
 }

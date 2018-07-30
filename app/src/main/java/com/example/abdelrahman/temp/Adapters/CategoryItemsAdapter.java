@@ -11,13 +11,14 @@ import android.widget.TextView;
 
 import com.example.abdelrahman.temp.Model.CategoryItems;
 import com.example.abdelrahman.temp.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class CategoryItemsAdapter extends RecyclerView.Adapter<CategoryItemsAdapter.CategoryItemsHolder> {
 
     Context context;
-    List categoryItemList;
+    List<CategoryItems> categoryItemList;
     int itemNumbers = 1;
 
     public CategoryItemsAdapter(Context context, List categoryItemList) {
@@ -27,16 +28,17 @@ public class CategoryItemsAdapter extends RecyclerView.Adapter<CategoryItemsAdap
 
     @NonNull
     @Override
-    public CategoryItemsHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CategoryItemsAdapter.CategoryItemsHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_category_items_item,parent,false);
-        return new CategoryItemsHolder(view);
+        return new CategoryItemsAdapter.CategoryItemsHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final CategoryItemsHolder holder, int position) {
-        CategoryItems categoryItems = (CategoryItems) categoryItemList.get(position);
+    public void onBindViewHolder(@NonNull final CategoryItemsAdapter.CategoryItemsHolder holder, int position) {
+        CategoryItems categoryItems = categoryItemList.get(position);
         holder.itemArabicName.setText(categoryItems.getArabicName());
         holder.itemPrice.setText(categoryItems.getPrice());
+        Picasso.get().load(categoryItems.getImageUrl()).into(holder.itemImage);
         holder.increaseItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

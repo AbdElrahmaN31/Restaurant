@@ -30,8 +30,8 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(userName.getText() != null && password.getText() != null){
-                    loginPresenter.login(userName.getText().toString(),password.getText().toString());
+                if(!userName.getText().toString().equals("") && !password.getText().toString().equals("")){
+                    loginPresenter.login(userName.getText().toString().trim(),password.getText().toString().trim());
                 }
             }
         });

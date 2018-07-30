@@ -1,6 +1,7 @@
 package com.example.abdelrahman.temp.Presenter;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.example.abdelrahman.temp.Model.City;
 import com.example.abdelrahman.temp.Model.User;
@@ -41,15 +42,19 @@ public class RegistrationPresenter {
         call.enqueue(new Callback<UserRegisterResponse>() {
             @Override
             public void onResponse(Call<UserRegisterResponse> call, Response<UserRegisterResponse> response) {
-                if (response.isSuccessful()){
+//                if (response.isSuccessful()){
                     if (response.body().getSuccess().equals("ok"))
                         registerView.openMain();
-                    else registerView.showErrorMessage();
-                }else registerView.showErrorMessage();
+                    else {
+                        Log.e("Register","error on response");
+                        registerView.showErrorMessage();
+                    }
+//                }else registerView.showErrorMessage();
             }
 
             @Override
             public void onFailure(Call<UserRegisterResponse> call, Throwable t) {
+                Log.e("Register",t.getMessage());
                 registerView.showErrorMessage();
             }
         });

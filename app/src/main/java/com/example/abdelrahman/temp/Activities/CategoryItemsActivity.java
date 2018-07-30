@@ -2,8 +2,10 @@ package com.example.abdelrahman.temp.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.example.abdelrahman.temp.Adapters.CategoryItemsAdapter;
 import com.example.abdelrahman.temp.Model.CategoryItems;
@@ -15,10 +17,10 @@ import java.util.List;
 
 public class CategoryItemsActivity extends AppCompatActivity implements CategoryItemsView {
 
-   CategoryItemsPresenter categoryItemsPresenter;
+    CategoryItemsPresenter categoryItemsPresenter;
     RecyclerView categoryItemsRecyclerView;
     CategoryItemsAdapter categoryItemsAdapter;
-    RecyclerView.LayoutManager layoutManager;
+    GridLayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +28,11 @@ public class CategoryItemsActivity extends AppCompatActivity implements Category
         setContentView(R.layout.activity_category_items);
 
         categoryItemsRecyclerView = findViewById(R.id.rv_category_items);
+        layoutManager = new GridLayoutManager(this,2);
+        categoryItemsRecyclerView.setLayoutManager(layoutManager);
         categoryItemsPresenter = new CategoryItemsPresenter(this,this,getIntent().getStringExtra("categoryId"));
         categoryItemsPresenter.getCategoryItems();
-        layoutManager = new LinearLayoutManager(this);
+
     }
 
     @Override
