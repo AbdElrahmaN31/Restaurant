@@ -3,7 +3,7 @@ package com.example.abdelrahman.temp.Presenter;
 import android.content.Context;
 import android.widget.Toast;
 
-import com.example.abdelrahman.temp.Model.CityResponce;
+import com.example.abdelrahman.temp.Models.CityResponce;
 import com.example.abdelrahman.temp.Retrofit.ApiClient;
 import com.example.abdelrahman.temp.Retrofit.ApiMethod;
 import com.example.abdelrahman.temp.View.CityVeiw;

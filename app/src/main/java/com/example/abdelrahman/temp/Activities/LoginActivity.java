@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.abdelrahman.temp.Model.User;
+import com.example.abdelrahman.temp.Models.User;
 import com.example.abdelrahman.temp.Presenter.LoginPresenter;
 import com.example.abdelrahman.temp.R;
 import com.example.abdelrahman.temp.View.LoginView;

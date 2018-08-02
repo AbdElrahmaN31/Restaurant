@@ -1,11 +1,10 @@
 package com.example.abdelrahman.temp.Retrofit;
 
-import com.example.abdelrahman.temp.Model.CategoryItemsResponse;
-import com.example.abdelrahman.temp.Model.CategoryResponse;
-import com.example.abdelrahman.temp.Model.CategoryItems;
-import com.example.abdelrahman.temp.Model.CityResponce;
-import com.example.abdelrahman.temp.Model.UserLoginResponse;
-import com.example.abdelrahman.temp.Model.UserRegisterResponse;
+import com.example.abdelrahman.temp.Models.ItemsResponse;
+import com.example.abdelrahman.temp.Models.CategoryResponse;
+import com.example.abdelrahman.temp.Models.CityResponce;
+import com.example.abdelrahman.temp.Models.UserLoginResponse;
+import com.example.abdelrahman.temp.Models.UserRegisterResponse;
 
 import java.util.Map;
 
@@ -30,6 +29,6 @@ public interface ApiMethod {
     Call<CategoryResponse> Category(@QueryMap Map<String,String>query);
 
     @POST("GetcategoryItems")
-    Call<CategoryItemsResponse>CategoryItems(@QueryMap Map<String ,String>query);
+    Call<ItemsResponse> getItems(@QueryMap Map<String ,String>query);
 
 }

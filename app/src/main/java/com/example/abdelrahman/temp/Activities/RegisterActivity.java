@@ -10,11 +10,10 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.Toast;
 
-import com.example.abdelrahman.temp.Model.City;
-import com.example.abdelrahman.temp.Model.User;
+import com.example.abdelrahman.temp.Models.City;
+import com.example.abdelrahman.temp.Models.User;
 import com.example.abdelrahman.temp.Presenter.CityPresenter;
 import com.example.abdelrahman.temp.Presenter.RegistrationPresenter;
 import com.example.abdelrahman.temp.R;
@@ -54,11 +53,16 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView,
         male = findViewById(R.id.male);
         female = findViewById(R.id.female);
         register = findViewById(R.id.register_bt);
-        gender_rg.setOnClickListener(new View.OnClickListener() {
+        male.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(male.isChecked()) gender = "0";
-                if (female.isChecked()) gender = "1";
+                gender = "0";
+            }
+        });
+        female.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gender = "1";
             }
         });
 
@@ -94,8 +98,6 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView,
                 }
             }
         });
-
-
 
     }
 

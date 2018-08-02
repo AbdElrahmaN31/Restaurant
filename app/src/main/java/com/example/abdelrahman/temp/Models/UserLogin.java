@@ -1,4 +1,4 @@
-package com.example.abdelrahman.temp.Model;
+package com.example.abdelrahman.temp.Models;
 
 /**
  * Created by HP on 30/06/2018.

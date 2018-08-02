@@ -4,8 +4,8 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.example.abdelrahman.temp.Model.User;
-import com.example.abdelrahman.temp.Model.UserLoginResponse;
+import com.example.abdelrahman.temp.Models.User;
+import com.example.abdelrahman.temp.Models.UserLoginResponse;
 import com.example.abdelrahman.temp.Retrofit.ApiClient;
 import com.example.abdelrahman.temp.Retrofit.ApiMethod;
 import com.example.abdelrahman.temp.View.LoginView;

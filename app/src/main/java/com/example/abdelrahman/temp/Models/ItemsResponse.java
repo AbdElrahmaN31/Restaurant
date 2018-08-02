@@ -1,19 +1,17 @@
-package com.example.abdelrahman.temp.Model;
-
-import android.content.ClipData;
+package com.example.abdelrahman.temp.Models;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class CategoryItemsResponse {
+public class ItemsResponse {
 
     @SerializedName("success")
     @Expose
     private String success;
     @SerializedName("items")
     @Expose
-    private List<CategoryItems> items = null;
+    private List<Item> items = null;
 
     public String getSuccess() {
         return success;
@@ -23,11 +21,11 @@ public class CategoryItemsResponse {
         this.success = success;
     }
 
-    public List<CategoryItems> getItems() {
+    public List<Item> getItems() {
         return items;
     }
 
-    public void setItems(List<CategoryItems> items) {
+    public void setItems(List<Item> items) {
         this.items = items;
     }
 }

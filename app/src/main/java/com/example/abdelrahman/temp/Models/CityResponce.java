@@ -1,4 +1,4 @@
-package com.example.abdelrahman.temp.Model;
+package com.example.abdelrahman.temp.Models;
 
 /**
  * Created by Mada on 6/30/2018.

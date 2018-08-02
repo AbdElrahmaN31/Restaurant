@@ -1,9 +1,10 @@
-package com.example.abdelrahman.temp.Model;
+package com.example.abdelrahman.temp.Models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class CategoryItems {
+public class Item {
+
     @SerializedName("id")
     @Expose
     private Integer id;

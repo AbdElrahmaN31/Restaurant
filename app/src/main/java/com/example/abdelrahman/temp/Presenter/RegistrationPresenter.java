@@ -3,9 +3,9 @@ package com.example.abdelrahman.temp.Presenter;
 import android.content.Context;
 import android.util.Log;
 
-import com.example.abdelrahman.temp.Model.City;
-import com.example.abdelrahman.temp.Model.User;
-import com.example.abdelrahman.temp.Model.UserRegisterResponse;
+import com.example.abdelrahman.temp.Models.City;
+import com.example.abdelrahman.temp.Models.User;
+import com.example.abdelrahman.temp.Models.UserRegisterResponse;
 import com.example.abdelrahman.temp.Retrofit.ApiClient;
 import com.example.abdelrahman.temp.Retrofit.ApiMethod;
 import com.example.abdelrahman.temp.View.RegisterView;

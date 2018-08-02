@@ -10,9 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.abdelrahman.temp.Activities.CategoryItemsActivity;
-import com.example.abdelrahman.temp.Model.Category;
-import com.example.abdelrahman.temp.Model.CategoryItemsResponse;
+import com.example.abdelrahman.temp.Activities.ItemsActivity;
+import com.example.abdelrahman.temp.Models.Category;
 import com.example.abdelrahman.temp.R;
 import com.squareup.picasso.Picasso;
 
@@ -37,7 +36,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CategoryHolder holder, int position) {
+    public void onBindViewHolder(final CategoryAdapter.CategoryHolder holder,final int position) {
         final Category category = categoryList.get(position);
         holder.arabicName.setText(category.getArabicName());
         holder.code.setText(category.getCode());
@@ -46,8 +45,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, CategoryItemsActivity.class);
-                intent.putExtra("categoryId", category.getCategoryId().toString());
+                String categoryId = category.getCategoryId().toString();
+                Intent intent = new Intent(context, ItemsActivity.class);
+                intent.putExtra("categoryId", categoryId);
                 context.startActivity(intent);
             }
         });

@@ -1,6 +1,6 @@
 package com.example.abdelrahman.temp.View;
 
-import com.example.abdelrahman.temp.Model.City;
+import com.example.abdelrahman.temp.Models.City;
 
 import java.util.List;
 
