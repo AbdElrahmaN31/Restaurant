@@ -27,7 +27,7 @@ public class ItemsPresenter {
         this.context = context;
         this.itemsView = itemsView;
         this.categoryId = categoryId;
-        Log.i("items","categoryId" + categoryId);
+        Log.i("items","categoryId : " + categoryId);
     }
 
     public void getCategoryItems() {
@@ -45,10 +45,9 @@ public class ItemsPresenter {
                     itemsView.categoryItemsList(response.body().getItems());
                 }
             }
-
             @Override
             public void onFailure(Call<ItemsResponse> call, Throwable t) {
-                Log.i("items","Response is failure");
+                Log.i("items","Response is failure \n" + t.getMessage());
                 Toast.makeText(context, "Error" , Toast.LENGTH_LONG);
 
             }

@@ -39,9 +39,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     public void onBindViewHolder(final CategoryAdapter.CategoryHolder holder,final int position) {
         final Category category = categoryList.get(position);
         holder.arabicName.setText(category.getArabicName());
-        holder.code.setText(category.getCode());
         Picasso.get().load(category.getImage()).into(holder.imageView);
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,7 +65,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         public CategoryHolder(View itemView) {
             super(itemView);
             this.arabicName = itemView.findViewById(R.id.arabic_name);
-            this.code = itemView.findViewById(R.id.code);
             this.imageView = itemView.findViewById(R.id.card_image);
         }
     }

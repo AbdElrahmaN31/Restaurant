@@ -25,7 +25,7 @@ public class Item {
     private Integer categoryId;
     @SerializedName("price")
     @Expose
-    private Integer price;
+    private Double price;
     @SerializedName("imageUrl")
     @Expose
     private String imageUrl;
@@ -90,11 +90,11 @@ public class Item {
         this.categoryId = categoryId;
     }
 
-    public Integer getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

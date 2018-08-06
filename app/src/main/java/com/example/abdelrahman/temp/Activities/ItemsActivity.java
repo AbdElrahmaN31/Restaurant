@@ -1,11 +1,14 @@
 package com.example.abdelrahman.temp.Activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.LinearLayout;
 
 import com.example.abdelrahman.temp.Adapters.ItemsAdapter;
@@ -21,7 +24,6 @@ public class ItemsActivity extends AppCompatActivity implements ItemsView {
     RecyclerView itemsRecyclerView;
     ItemsAdapter itemsAdapter;
     RecyclerView.LayoutManager layoutManager;
-    int i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,17 +37,33 @@ public class ItemsActivity extends AppCompatActivity implements ItemsView {
 
         itemsPresenter = new ItemsPresenter(this,this,getIntent().getStringExtra("categoryId"));
         itemsPresenter.getCategoryItems();
-        i =1;
     }
 
     @Override
     public void categoryItemsList(List<Item> items) {
         Log.i("items","ItemsActivity.CategoryItemsList,called");
         itemsAdapter = new ItemsAdapter(this, items);
-        Log.i("items","ItemsAdapter.Activity is intialized");
+        Log.i("items","ItemsAdapter.Activity is initialized");
         itemsRecyclerView.setAdapter(itemsAdapter);
         Log.i("items","Adapter had set");
         itemsAdapter.notifyDataSetChanged();
         Log.i("items","data adapter notified");
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemThatWasClickedId = item.getItemId();
+        if (itemThatWasClickedId == R.id.action_cart) {
+            Intent intent = new Intent(getApplicationContext(),CartActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

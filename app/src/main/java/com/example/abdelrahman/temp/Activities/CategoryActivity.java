@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 
 import com.example.abdelrahman.temp.Adapters.CategoryAdapter;
 import com.example.abdelrahman.temp.Models.Category;
@@ -29,7 +32,7 @@ public class CategoryActivity extends AppCompatActivity implements CategoryView 
         categoryRecyclerView = findViewById(R.id.rv_category);
         gridLayoutManager = new LinearLayoutManager(this);
         categoryRecyclerView.setLayoutManager(gridLayoutManager);
-        categoryPresenter = new CategoryPresenter(this,  this);
+        categoryPresenter = new CategoryPresenter(this, this);
         categoryPresenter.getCategory("1");
     }
 
@@ -38,5 +41,21 @@ public class CategoryActivity extends AppCompatActivity implements CategoryView 
         categoryAdapter = new CategoryAdapter(this, categoryList);
         categoryRecyclerView.setAdapter(categoryAdapter);
         categoryAdapter.notifyDataSetChanged();
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemThatWasClickedId = item.getItemId();
+        if (itemThatWasClickedId == R.id.action_cart) {
+            Intent intent = new Intent(getApplicationContext(),CartActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
